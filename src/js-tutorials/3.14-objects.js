@@ -13,7 +13,13 @@ function createPerson(firstName, lastName){
     };
 }
 
-console.log(createPerson("Ben","Hunt"));
+let ben = createPerson("Ben","Hunt")
+console.log(ben);
 for(let prop in person){
-    console.log(person[prop]);
+    console.log(prop + ": "+ person[prop]);
 }
+
+let benClone = Object.assign({}, ben);
+// Must use string to access with []'s
+console.log("Ben clone firstName: " + benClone["firstName"]);
+console.log("Ben clone lastName: " + benClone.lastName);
