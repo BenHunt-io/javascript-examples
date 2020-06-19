@@ -26,4 +26,19 @@ cookBurger(function(cookType) {
 });
 
 
+// Lambdas
+function createElement(attributeOne, attributeTwo){
+    return "Created element " + attributeOne + " " + attributeTwo;
+}
 
+const element = createElement("button", "red");
+console.log(element);
+
+// creates a function that points to another function.
+const functionElement = () => createElement("button", "green");
+console.log(functionElement);
+console.log(functionElement());
+
+// "Short-hand" function
+const functionElementParam = (attributeOne) => createElement(attributeOne, "yellow");
+console.log(functionElementParam("paragraph"))
