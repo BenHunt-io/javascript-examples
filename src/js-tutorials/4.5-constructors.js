@@ -11,3 +11,6 @@ function Car(make, model) {
 
 fordTaurus = new Car("Ford","Taurus");
 console.log(fordTaurus.make);
+
+chevyTahoe = Car("Chevy", "Tahoe"); 
+// console.log(chevyTahoe.make); // this object is not created within the function.. Results in undefined property
