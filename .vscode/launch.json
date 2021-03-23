@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Launch Program",
-            "program": "${workspaceFolder}/src/js-tutorials/8-prototypes/8.1-practice-exercises.js",
+            "program": "${workspaceFolder}/src/js-tutorials/2-javascript-fundamentals/2.18-Summary.js",
             "request": "launch",
             "skipFiles": [
                 "<node_internals>/**"

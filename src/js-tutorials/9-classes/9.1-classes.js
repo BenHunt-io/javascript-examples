@@ -20,6 +20,6 @@ console.log(Car.prototype.drive);
 console.log(typeof Car);
 
 // Losing this
-fordTaurus = new Car("Taurus");
+const fordTaurus = new Car("Taurus");
 fordTaurus.drive();
 fordTaurus.printModel();
