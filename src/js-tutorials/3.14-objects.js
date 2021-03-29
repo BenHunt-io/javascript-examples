@@ -23,3 +23,18 @@ let benClone = Object.assign({}, ben);
 // Must use string to access with []'s
 console.log("Ben clone firstName: " + benClone["firstName"]);
 console.log("Ben clone lastName: " + benClone.lastName);
+
+
+
+// Can have objs with same name as property
+let word = {
+    word : "Tree",
+    length : "4",
+}
+
+let wordTwo = {
+    word : word
+}
+
+console.log(word.word);
+console.log(wordTwo.word);

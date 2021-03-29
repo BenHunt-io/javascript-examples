@@ -9,8 +9,8 @@ function Car(make, model) {
     // implicitcly returns this
 }
 
-fordTaurus = new Car("Ford","Taurus");
+let fordTaurus = new Car("Ford","Taurus");
 console.log(fordTaurus.make);
 
-chevyTahoe = Car("Chevy", "Tahoe"); 
+let chevyTahoe = Car("Chevy", "Tahoe"); 
 // console.log(chevyTahoe.make); // this object is not created within the function.. Results in undefined property
