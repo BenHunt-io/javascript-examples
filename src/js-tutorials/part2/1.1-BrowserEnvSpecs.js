@@ -13,3 +13,8 @@
  * Host Environment - Each host environment provides it's own set of objects, or API. Browsers typically includes API's
  * for manipulating the webpage.
  */
+
+// specs:
+https://dom.spec.whatwg.org/
+https://html.spec.whatwg.org/
+https://www.w3.org/TR/cssom-1/

@@ -5,5 +5,4 @@
  * Text Nodes: text between tags, always leafs
  * Document Node: entry point node (root node)
  * Comments Nodes: lolwut
- * 
  */
