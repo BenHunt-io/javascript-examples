@@ -25,4 +25,4 @@ loadScript("11.1-callback-cook.js", function () {
 });
 
 // Can have a "pyramid of doom" or "callback-hell" if we nest asynchronous functions.
-// We need promises for this to handle them neatly.
+// We need promises for this to handle them neatly. Will clutter namespace if using toplevel functions.
