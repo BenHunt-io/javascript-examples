@@ -1,3 +1,11 @@
+// default values
+function printFourParameters(a, b, c, d){
+    console.log(`a:${a}, b:${b}, c:${c} d:${d}`);
+}
+
+// Cannot omit b/c, it'll always be the last parameter(s).
+printFourParameters("A", "D");
+
 // Function Expressions
 i = 0;
 let hitCount = function() {
