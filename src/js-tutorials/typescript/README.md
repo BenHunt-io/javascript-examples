@@ -1,0 +1,1 @@
+The typescript directory contains various typescript examples from the typescriptlang.org docs.
