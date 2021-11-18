@@ -59,4 +59,34 @@ printOnlyCars({ id: 1, make: "Tesla", model: "CyberTruck" });
 function printBear(bear) {
     console.log(bear);
 }
-printBear({ "class": "mammal", honey: true });
+printBear({ name: "black bear", "class": "mammal", honey: true });
+var bear = { name: "black bear", "class": "mammal", honey: true };
+var dog = { name: "chase", owner: "Jesse's Dad" };
+// error
+// dog = <Bear>dog;
+/**
+ * Literal Types
+ */
+function walk(direction) {
+    console.log("Walking in the " + direction + " direction");
+}
+walk('FORWARD');
+// Error
+//walk('SIDEWAYS');
+/**
+ * Literal Type Inference
+ */
+function processReq(url, method) {
+    console.log(method + " " + url);
+}
+var req = { url: "http://localhost:3000/coin/1", method: "GET" };
+// ERROR
+// req.method = 'PUT';
+processReq(req.url, req.method);
+/**
+ * Strict Null Checks
+ *  - should be on to avoid Null Pointer errors.
+ */
+function printDangeriousValue(value) {
+    console.log(value.toUpperCase());
+}

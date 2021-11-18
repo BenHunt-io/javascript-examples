@@ -129,7 +129,63 @@ printBear({name: "black bear", class:"mammal", honey:true})
 // printBear({name: "black bear", honey:true})
 
 
+/**
+ * Type coercions
+ *  - Used more for types that are determined at runtime. You might know what
+ * the type will be but TypeScript cannot.
+ */
 
+interface Dog extends Animal {
+    owner: string
+}
+
+let bear = {name: "black bear", class:"mammal", honey:true} as Bear;
+let dog = <Dog>{name: "chase", owner:"Jesse's Dad"};
+// error
+// dog = <Bear>dog;
+
+
+/**
+ * Literal Types
+ */
+
+
+function walk(direction: 'LEFT' | 'RIGHT' | 'FORWARD' | 'BACKWARD'){
+    console.log(`Walking in the ${direction} direction`);
+}
+
+walk('FORWARD');
+// Error
+//walk('SIDEWAYS');
+
+
+/**
+ * Literal Type Inference
+ */
+
+function processReq(url: string, method: 'POST' | 'GET'){
+    console.log(`${method} ${url}`);
+}
+
+let req = {url: "http://localhost:3000/coin/1", method: "GET" as "GET"};
+// ERROR
+// req.method = 'PUT';
+
+processReq(req.url, req.method);
+
+/**
+ * Strict Null Checks
+ *  - should be on to avoid Null Pointer errors.
+ */
+
+function printDangeriousValue(value: string | null) {
+    // non-null type assertion
+    console.log(value!.toUpperCase);
+    // Error (w/ out strict compilation on)
+    // console.log(value.toUpperCase);
+}
+
+printDangeriousValue("Ben isn't that dangerous");
 
 
 // printPerson({name: "Ben"});
