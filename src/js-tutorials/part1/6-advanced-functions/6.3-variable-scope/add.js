@@ -1,5 +1,6 @@
+import { topLevelIncrement } from "./module-variable-scope";
 
-let count = 0;
-export default function increment() {
-    console.log(count++);
+export let count = 0;
+export function increment() {
+    console.log(++count);
 }
