@@ -43,3 +43,40 @@ function sayHi(){
 sayHi();
 console.log(sayHi.coolnessFactor);
 console.log(sayHi);
+
+
+// Cache Implementation with Decorators
+let factorial = function(a){
+    let sum = 1;
+    for(let i = 2; i<=a; i++){
+        sum *= i;
+    }
+    return sum;
+}
+
+function cache(func){
+
+    let cache = new Map();
+    return function (){
+        if(cache.has(arguments[0])){
+            console.log("Cache Hit")
+            return cache.get(arguments[0]);
+        }
+        console.log("Cache Miss")
+        let result = func.apply(this, arguments);
+        cache.set(arguments[0], result);
+
+        return result;
+    }
+}
+
+factorial = cache(factorial);
+factorial(15); // miss
+factorial(20); // miss
+factorial(15); // hit
+factorial(5); // hit
+factorial(5); // miss
+
+
+
+

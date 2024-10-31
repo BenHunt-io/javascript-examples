@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link rel="stylesheet" type="text/css" href="./3.2-forms.css"/>
+
+    <style type="text/css">
+        .application-header{
+            text-align: center;
+        }
+        .form-element-list {
+            list-style-type: none;
+        }
+        .applicant-form {
+        /* Center the form on the page */
+        margin: 0 auto;
+        width: 600px;
+        /* Form outline */
+        padding: 1em;
+        border: 1px solid #CCC;
+        border-radius: 1em;        }
+    </style>
+</head>
+
+<body>
+    <h3 class="application-header">Apply to ObjectiveNews.com</h3>
+    <form class="applicant-form" method="POST" action="http://localhost:8000/applicants">
+        <ul class="form-element-list">
+            <li>
+                <label for="email">Email</label>
+                <input type="email" id="email" />
+            </li>
+            <li>
+                <label for="fullname">Full name</label>
+                <input type="text" id="fullname" value="" placeholder="first middle last"/>
+            </li>
+            <li>
+                <label for="earliestStartDate">Earliest start date</label>
+                <input type="date" id="earliestStartDate" name="earliestStartDate"/>
+            </li>
+            <li>
+                <div class="slideContainer">
+                    <label for="politicalLeanSlider">I lean</label>
+                    <input id="politicalLeanSlider" name="politicalLeanSlider" type="range" min="1" max="100" value="50" class="slider">
+                </div>
+            </li>
+            <li>
+                <!-- Radios are grouped by the name attribute-->
+                <span>If I had to pick</span>
+
+                <input id="democratRadio" type="radio" name="politicalPartyRadio" value="Democrat">
+                <label for="democratRadio">Democrat</label>
+
+                <input id="republicanRadio" type="radio" name="politicalPartyRadio" value="Republican">
+                <label for="republicanRadio">Republican</label>
+
+                <input id="independentRadio" type="radio" name="politicalPartyRadio" value="Independent">
+                <label for="independentRadio">Independent</label>
+
+                <input id="otherRadio" type="radio" name="politicalPartyRadio" value="Other">
+                <label for="otherRadio">Other</label>
+                
+            </li>
+            <li>
+                <label for="previousCompanyTextField">Previous company</label>
+                <input type="text" id="previousCompanyTextField" name="previousCompanyTextField"/>
+            </li>
+            <li>
+                <label for="experienceSelect">Years of experience</label>
+                <select id="experienceSelect" name="experienceSelect">
+                    <option value="">Select years of experience</option>
+                    <option value="0">0</option>
+                    <option value="1">1+</option>
+                    <option value="2">2+</option>
+                    <option value="5">5+</option>
+                    <option value="10">10+</option>
+                </select>
+            </li>
+            <li>
+                <p>Reason for application</p>
+                <textarea name="reasonTextField" id="reasonTextField" aria-label="Reason for application"></textarea>
+            </li>
+            <li>
+                <!-- Default type is submit -->
+                <button type="submit">Submit</button>
+            </li>
+        </ul>
+    </form>
+</body>
+
+</html>

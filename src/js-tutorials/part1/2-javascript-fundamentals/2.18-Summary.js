@@ -18,7 +18,7 @@ let car;
 if(typeof(car) == undefined){
     console.log("car is undefined");
 }
-if(typeof(person.address) == object){
+if(typeof(person.address) == Object){
     console.log("Official bug in typeof(), person.address should be of type null");
 }
 
@@ -31,3 +31,5 @@ if(typeof(person.address) == object){
 // Comparisons convert to numbers, unless used === for strict comparison
 console.log(0 == false); // true
 console.log(0 == ''); // true
+
+console.log(3*'2');

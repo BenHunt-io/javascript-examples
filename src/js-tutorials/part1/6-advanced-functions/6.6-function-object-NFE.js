@@ -17,11 +17,13 @@ function makeCounter(){
 }
 
 let counter = makeCounter();
-// 0
-console.log(counter());
+console.log(counter()); // 0 
+console.log(counter()); // 1
 counter.count = 1337;
-// 1337
-console.log(counter());
+console.log(counter()); // 1337
+
+
+
 
 // Named Function Expression
 // Allows for recusion and reassignment of function expressions

@@ -8,8 +8,14 @@ let person = {
     name: "n/a",
     age: -1,
     
-    setName(name){this.name = name;}, // Comma not required in classes
-    getName(){return this.name;}
+    set name(name){
+        console.log(`Setting`);
+        this.name = name;
+    }, // Comma not required in classes
+    get name(){
+        console.log(`Getting`);
+        return this.name;
+    }
 }
 
 let ben = {
@@ -20,11 +26,11 @@ let ben = {
 // for..in iterates through enumerable properties including inherited ones. (where enumerated=true)
 console.log("Iterating through enumerable properties:")
 for(let key in ben){
-    console.log(key);
+    console.log(key); // hobby \n name \n age \n setName \n getName \n 
 }
 
-console.log("");
-console.log(ben.name); // Automatically calls getter/setter
+// Automatically calls getter/setter
+console.log(ben.name); // n/a
 ben.name = "Ben";
-console.log(ben.name);
+console.log(ben.name); // Ben
 

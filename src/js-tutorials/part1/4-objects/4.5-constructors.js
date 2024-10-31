@@ -13,4 +13,4 @@ let fordTaurus = new Car("Ford","Taurus");
 console.log(fordTaurus.make);
 
 let chevyTahoe = Car("Chevy", "Tahoe"); 
-// console.log(chevyTahoe.make); // this object is not created within the function.. Results in undefined property
+console.log(chevyTahoe.make); // this object is not created within the function.. Results in undefined property

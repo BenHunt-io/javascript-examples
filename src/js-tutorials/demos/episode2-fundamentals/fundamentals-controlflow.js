@@ -93,3 +93,11 @@ function switchExample(input){
         break;
     }
 }
+
+// two pointers in loop
+console.log("Two pointers in a loop:");
+let nums = [1,2,3,4,5];
+for(let i = 0, j = nums.length-1; i<=j; i++, j--){
+        console.log(nums[i]);
+        console.log(nums[j]);
+}

@@ -1,6 +1,6 @@
 // default values
 function printFourParameters(a, b, c, d){
-    console.log(`a:${a}, b:${b}, c:${c} d:${d}`);
+    console.log(`a:${a}, b:${b}, c:${c} d:${d}`); // a:A, b:D, c:undefined d:undefined
 }
 
 // Cannot omit b/c, it'll always be the last parameter(s).

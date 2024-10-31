@@ -6,7 +6,7 @@ function f(){
    return this;
 }
 
-console.log(`Calling default this in a function in Node, ${f()}`);
+console.log(`Calling default this in a function in Node, ${f()}`); // [object Global]
 
 let user = {
     g : f.bind(null), // hard-fixing f to be bound to null
@@ -16,18 +16,16 @@ console.log(`Calling this bound to null in a function in Node, ${user.g()}`);
 
 // console.log(user.g()); // nulls... actually prints out the global object?
 
-
 /**
  * Second bind
  */
 
 function h(){
-    console.log(`${this.name}`);
+    console.log(`${this.name}`); // undefined
 }
 
-// Prints out Undefined, Ben
 h = h.bind({name:"Ben"}).bind({name:"Pablo"});
-h();
+h(); // Ben
 
 /**
  * Function property after bind
