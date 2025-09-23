@@ -1,0 +1,46 @@
+
+
+<body>
+    <button>Click me</button>
+    <p>count: <span>0</span></p>
+
+</body>
+
+
+<script>
+    // This runs after the DOM is fully constructed
+    const button = document.querySelector('button');
+    const count = document.querySelector('span');
+    
+    button.addEventListener('click', () => {
+        const newCount = parseInt(count.textContent) + 1;
+        count.textContent = newCount;
+        console.log(`Microtask ${newCount}: button click`)
+    });
+</script>
+
+<!-- Handlers created using .then/.catch/.finally get queued after the macro task -->
+<!-- Promises created during the macro task get executed immediately as part of the macro task -->
+<script>
+    setTimeout(() => {
+        const wait = (millis) => {
+            const now = Date.now();
+            while(Date.now() - now < millis){
+                // do nothing
+            }
+        }
+
+        console.log(`Macrotask 1: started`)
+        void new Promise((resolve) => {
+            console.log("Macrotask 1: Promise1 executing")
+            resolve();
+        }).then(val => {
+            console.log("Microtask 1: Promise1 then handler")
+        })
+
+        console.log("Macrotask 1: Promise1 resolved")
+
+        wait(5_000);
+        console.log(`Macrotask 1: finished`)
+    }, 1_000)
+</script>

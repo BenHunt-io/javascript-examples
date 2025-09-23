@@ -1,0 +1,32 @@
+
+
+<body>
+    <button>Click me</button>
+    <p>count: <span>0</span></p>
+
+</body>
+
+
+<script>
+    // This runs after the DOM is fully constructed
+    const button = document.querySelector('button');
+    const count = document.querySelector('span');
+    
+    button.addEventListener('click', () => {
+        count.textContent = parseInt(count.textContent) + 1;
+        console.log(`Clicked with count: ${count.textContent}`)
+    });
+</script>
+
+
+<!-- Macro Task, freezes the UI for 5 second 1 second after the UI loads -->
+<!-- Events from clicking the button are still queued for after this finishes -->
+<script>
+    setTimeout(() => {
+        const now = Date.now();
+        while(Date.now() - now < 5000){
+            // do nothing
+        }
+    }, 1000);
+
+</script>

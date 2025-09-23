@@ -1,6 +1,6 @@
 /**
  * Javascript has a "microtask" queue that promises get
- * queued up in. When an rejected promise gets dequeued 
+ * queued up in. When a rejected promise gets dequeued 
  * and the queue is empty, it becomes an unhandledrejection event.
  * 
  * The v8 engine only dequeues when there's no work to be done,
